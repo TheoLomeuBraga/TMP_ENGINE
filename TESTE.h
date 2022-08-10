@@ -180,24 +180,32 @@ void iniciarTeste3() {
 
 	Objetos::MatrizMundi = mat4(1.0f);
 
-	instrucoes_render ir, ir2;
 
-	ir.usar_profundidade = false;
 
+	instrucoes_render ir1, ir2,ir3, ir4;
+
+	ir2.usar_profundidade = false;
 	ir2.limpar_buffer_cores = false;
 	ir2.iniciar_render = false;
-	
-
-
-	
+	ir2.limpar_buffer_cores = false;
+	ir2.iniciar_render = false;
 
 	
+	ir3.limpar_buffer_cores = false;
+	ir3.iniciar_render = false;
+	
+	ir4.usar_profundidade = false;
+	ir4.limpar_buffer_cores = false;
+	ir4.iniciar_render = false;
+	ir4.limpar_buffer_cores = false;
+	ir4.iniciar_render = false;
 	
 
-	api_grafica->info_render.resize(2);
-	api_grafica->info_render[0] = ir;
+	api_grafica->info_render.resize(4);
+	api_grafica->info_render[0] = ir1;
 	api_grafica->info_render[1] = ir2;
-
+	api_grafica->info_render[2] = ir3;
+	api_grafica->info_render[3] = ir4;
 
 	ca.camada = 0;
 	ca.camada_colide = {0,};

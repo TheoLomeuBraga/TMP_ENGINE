@@ -168,12 +168,14 @@ void depois_imgui() {
 	
 }
 
-shared_ptr<Objetos::objeto_jogo> test_3D;
+
 shared_ptr<Objetos::objeto_jogo> core;
 
+shared_ptr<Objetos::objeto_jogo> camera_teste;
+
 void iniciarTeste3() {
-	core = Objetos::novo_objeto_jogo();
-	test_3D = Objetos::novo_objeto_jogo();
+	
+	camera_teste = Objetos::novo_objeto_jogo();
 	api_grafica = new OpenGL_API();
 	api_grafica->pos_processamento_info.shad = "recursos/Shaders/pos-procesamento";
 
@@ -181,16 +183,17 @@ void iniciarTeste3() {
 	Objetos::MatrizMundi = mat4(1.0f);
 
 
-	/*
+	
 	instrucoes_render ir1, ir2,ir3, ir4;
 
 	ir2.usar_profundidade = false;
 	ir2.limpar_buffer_cores = false;
 	ir2.iniciar_render = false;
-
+	//ir2.desenhar_objetos = false;
 	
 	ir3.limpar_buffer_cores = false;
 	ir3.iniciar_render = false;
+	//ir3.desenhar_objetos = false;
 	
 	ir4.usar_profundidade = false;
 	ir4.limpar_buffer_cores = false;
@@ -202,7 +205,7 @@ void iniciarTeste3() {
 	api_grafica->info_render[1] = ir2;
 	api_grafica->info_render[2] = ir3;
 	api_grafica->info_render[3] = ir4;
-	*/
+	
 
 	ca.camada = 0;
 	ca.camada_colide = {0,};
@@ -228,7 +231,7 @@ void iniciarTeste3() {
 
 
 
-
+	core = Objetos::novo_objeto_jogo();
 	core->adicionar_componente<componente_lua>(componente_lua());
 	core->pegar_componente< componente_lua>()->adicionar_script("resources/Scripts/core.lua");
 	
@@ -240,7 +243,8 @@ void iniciarTeste3() {
 	
 	//Objetos::cena_objetos_selecionados->adicionar_objeto(test_3D);
 	Objetos::cena_objetos_selecionados->adicionar_objeto(core);
-
+	Objetos::cena_objetos_selecionados->adicionar_objeto(camera_teste);
+	
 	
 	
 	
@@ -260,54 +264,7 @@ bool boleanas[10];
 
 shared_ptr<objeto_jogo> obj;
 void teste3() {
-	
-
-	//obj = make_shared<objeto_jogo>();
-	//Objetos::cena_objetos_selecionados->adicionar_objeto(obj);
-	//obj->adicionar_componente<componente_lua>(componente_lua());
-	//obj->pegar_componente<componente_lua>()->adicionar_script("recursos\\Scripts\\bulet.lua");
-	//obj->adicionar_componente<Objetos::transform>(Objetos::transform());
-	//box_2D b2d = box_2D();
-	//obj->adicionar_componente<box_2D>(b2d);
-	//obj->lixo = true;
-	
-
-	
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-	
-
-	//if (Tempo::tempo > 7 && !boleanas[0]) {
-	//	
-	//	escrever("AAAAAAAAAAA");
-	//	setar_tela_inteira_como(false);
-	//	
-	//	
-	//	
-	//	
-	//	
-	//	
-	//	
-	//	
-	//
-	//	boleanas[0] = true;
-	//}
-	
-	
-
+	//escrever(Tempo::FPS);
 	
 
 
